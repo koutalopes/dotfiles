@@ -1,6 +1,12 @@
 #!/bin/bash
 
-rm -fr $HOME/Scripts/dotfiles/{dunst,i3,mpv,polybar,rofi,systemd,compton.conf,Xresources}
+dot=$1
 
-cp -fr $XDG_CONFIG_HOME/{dunst,i3,mpv,polybar,rofi,systemd,compton.conf} $HOME/Scripts/dotfiles
-cp -f $HOME/.Xresources $HOME/Scripts/dotfiles/Xresources
+rm -fr $HOME/Scripts/dotfiles/"$dot"
+
+if [[ "$dot" == "Xresources" ]]; then
+    cp -f $HOME/.Xresources $HOME/Scripts/dotfiles/"$dot"
+else
+    cp -fr $XDG_CONFIG_HOME/"$dot" $HOME/Scripts/dotfiles
+fi
+
