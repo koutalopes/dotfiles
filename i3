@@ -1,1 +1,1 @@
-/home/kouta/.config/i3/
+../../.config/i3
