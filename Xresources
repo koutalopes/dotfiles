@@ -1,0 +1,76 @@
+!##################################################################################################
+!   __   __                                                                   
+!  /\ \ /\ \                                                                  
+!  \ `\`\/'/'  _ __    __    ____    ___   __  __  _ __   ___     __    ____  
+!   `\/ > <   /\`'__\/'__`\ /',__\  / __`\/\ \/\ \/\`'__\/'___\ /'__`\ /',__\ 
+!      \/'/\`\\ \ \//\  __//\__, `\/\ \L\ \ \ \_\ \ \ \//\ \__//\  __//\__, `\
+!      /\_\\ \_\ \_\\ \____\/\____/\ \____/\ \____/\ \_\\ \____\ \____\/\____/
+!      \/_/ \/_/\/_/ \/____/\/___/  \/___/  \/___/  \/_/ \/____/\/____/\/___/ 
+!                                                                             
+!    Version of URxvt
+!    rxvt-unicode-cvs-patched-wideglyphs
+!    https://github.com/blueyed/PKGBUILD-rxvt-unicode-wide
+!
+!##################################################################################################
+!! Set fonts and fallback
+
+URxvt.font:			            xft:xos4 Terminus:size=9, \
+				                xft:Unifont, \
+				                -wuncon-siji-medium-r-normal--10-100-75-75-c-80-iso10646-1
+
+!! Other settings
+URxvt.geometry:             	125x35
+URxvt.scrollBar:            	false
+URxvt.internalBorder:       	16
+URxvt.depth:                	32
+URxvt.perl-ext-common:      	default,matcher
+URxvt.url-launcher:         	/usr/bin/xdg-open
+URxvt.matcher.button:       	1
+URxvt.saveLines:	        	2000
+
+!! DPI Settings
+Xft.dpi:                    	96
+Xft.autohint:               	0
+Xft.lcdfilter:              	lcddefault
+Xft.hintstyle:              	hintfull
+Xft.hinting:                	1
+Xft.antialias:              	1
+Xft.rgba:                   	rgb
+
+URxvt.background:		        [90]#2E3540
+URxvt.foreground:		        #04CED4
+URxvt.cursorColor:		        #04CED4
+
+! black
+URxvt.color0:                   #6d9b9b
+URxvt.color8:                   #819c9c
+
+! red
+URxvt.color1:                   #7dabab
+URxvt.color9:                   #93abab
+
+! green
+URxvt.color2:                   #7dbaba
+URxvt.color10:                  #95baba
+
+! yellow
+URxvt.color3:                   #8fcccc
+URxvt.color11:                  #a9cccc
+
+! blue
+URxvt.color4:                   #9adbdb
+URxvt.color12:                  #b6dbdb
+
+! magenta
+URxvt.color5:                   #a1e6e6
+URxvt.color13:                  #bee6e6
+
+! cyan
+URxvt.color6:                   #abf5f5
+URxvt.color14:                  #cbf5f5
+
+! white
+URxvt.color7:                   #b3ffff
+URxvt.color15:                  #d3ffff
+
+

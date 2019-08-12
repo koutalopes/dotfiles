@@ -1,0 +1,5 @@
+[Unit]
+Description=Set and change wallpaper
+
+[Service]
+ExecStart=/bin/sh /home/kouta/Scripts/wall_change.sh
