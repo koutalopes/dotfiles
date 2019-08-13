@@ -12,16 +12,16 @@ local img_folder = os.getenv("HOME") .. "/Imagens/"
 
 local theme = {}
 
-theme.font          = "xos4 Terminus 9"
+theme.font          = "Terminus(TTF) 9"
 
-theme.bg_normal     = "#222222"
-theme.bg_focus      = "#535d6c"
-theme.bg_urgent     = "#ff0000"
-theme.bg_minimize   = "#444444"
+theme.bg_normal     = "#2E3540"
+--theme.bg_focus      = "#535d6c"
+--theme.bg_urgent     = "#ff0000"
+--theme.bg_minimize   = "#444444"
 theme.bg_systray    = theme.bg_normal
 
-theme.fg_normal     = "#aaaaaa"
-theme.fg_focus      = "#ffffff"
+theme.fg_normal     = "#04CED4"
+theme.fg_focus      = "#B3FFFF"
 theme.fg_urgent     = "#ffffff"
 theme.fg_minimize   = "#ffffff"
 
@@ -30,6 +30,8 @@ theme.border_width  = dpi(0)
 theme.border_normal = "#000000"
 theme.border_focus  = "#535d6c"
 theme.border_marked = "#91231c"
+
+theme.taglist_fg_occupied = "#5F7879"
 
 -- There are other variable sets
 -- overriding the default one when
@@ -45,13 +47,14 @@ theme.border_marked = "#91231c"
 --theme.taglist_bg_focus = "#ff0000"
 
 -- Generate taglist squares:
-local taglist_square_size = dpi(4)
+--[[local taglist_square_size = dpi(4)
 theme.taglist_squares_sel = theme_assets.taglist_squares_sel(
     taglist_square_size, theme.fg_normal
 )
 theme.taglist_squares_unsel = theme_assets.taglist_squares_unsel(
     taglist_square_size, theme.fg_normal
 )
+]]
 
 -- Variables set for theming notifications:
 -- notification_font
@@ -126,7 +129,7 @@ theme.awesome_icon = theme_assets.awesome_icon(
 
 -- Define the icon theme for application icons. If not set then the icons
 -- from /usr/share/icons and /usr/share/icons/hicolor will be used.
-theme.icon_theme = nil
+theme.icon_theme = "Papirus-Dark"
 
 return theme
 

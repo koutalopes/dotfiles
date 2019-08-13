@@ -18,11 +18,12 @@ local wibox = require("wibox")
 local beautiful = require("beautiful")
 -- Notification library
 local naughty = require("naughty")
-local menubar = require("menubar")
 local hotkeys_popup = require("awful.hotkeys_popup")
 -- Enable hotkeys help widget for VIM and other apps
 -- when client with a matching name is opened:
 require("awful.hotkeys_popup.keys")
+
+local img_folder = os.getenv("HOME") .. "/Imagens/"
 
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
@@ -107,10 +108,6 @@ mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesom
 mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon,
                                      menu = mymainmenu })
 
--- Menubar configuration
-menubar.utils.terminal = terminal -- Set the terminal for applications that require it
--- }}}
-
 -- Keyboard map indicator and switcher
 mykeyboardlayout = awful.widget.keyboardlayout()
 
@@ -158,27 +155,9 @@ local tasklist_buttons = gears.table.join(
                                               awful.client.focus.byidx(-1)
                                           end))
 
-local function set_wallpaper(s)
-    -- Wallpaper
-    if beautiful.wallpaper then
-        local wallpaper = beautiful.wallpaper
-        -- If wallpaper is a function, call it with the screen
-        if type(wallpaper) == "function" then
-            wallpaper = wallpaper(s)
-        end
-        gears.wallpaper.maximized(wallpaper, s, true)
-    end
-end
-
--- Re-set wallpaper when a screen's geometry changes (e.g. different resolution)
-screen.connect_signal("property::geometry", set_wallpaper)
-
 awful.screen.connect_for_each_screen(function(s)
-    -- Wallpaper
-    set_wallpaper(s)
-
     -- Each screen has its own tag table.
-    awful.tag({ "1", "2", "3", "4", "5", "6", "7", "8", "9" }, s, awful.layout.layouts[1])
+    awful.tag({ "一", "二", "三", "四", "五", "六", "七", "八", "九" }, s, awful.layout.layouts[1])
 
     -- Create a promptbox for each screen
     s.mypromptbox = awful.widget.prompt()
@@ -205,30 +184,41 @@ awful.screen.connect_for_each_screen(function(s)
     }
 
     -- Create the wibox
-    s.mywibox = awful.wibar({ position = "top", screen = s })
+    s.mywibox = awful.wibar({
+        position = "top",
+        screen = s,
+        height = 26,
+        opacity = 0.9,
+    })
 
     -- Add widgets to the wibox
     s.mywibox:setup {
         {
-            layout = wibox.layout.fixed.horizontal,
-            s.mytaglist,
-            s.mypromptbox,
-        },
-        nil,
-        {
-            layout = wibox.layout.fixed.horizontal,
+            layout = wibox.layout.align.horizontal,
             {
-                layout = awful.widget.only_on_screen,
-                screen = "primary",
-                wibox.widget.systray(),
+                layout = wibox.layout.fixed.horizontal,
+                s.mytaglist,
+                s.mypromptbox,
             },
+            nil,
             {
-                layout = awful.widget.only_on_screen,
-                screen = "primary",
-                mytextclock,
+                layout = wibox.layout.fixed.horizontal,
+                {
+                    layout = awful.widget.only_on_screen,
+                    screen = "primary",
+                    wibox.widget.systray(),
+                },
+                {
+                    layout = awful.widget.only_on_screen,
+                    screen = "primary",
+                    mytextclock,
+                },
             },
+            
         },
-        layout = wibox.layout.align.horizontal,
+        bottom = 1,
+        color = "#04CED4",
+        layout = wibox.container.margin
     }
 end)
 -- }}}
@@ -338,9 +328,9 @@ globalkeys = gears.table.join(
                   }
               end,
               {description = "lua execute prompt", group = "awesome"}),
-    -- Menubar
-    awful.key({ modkey }, "p", function() menubar.show() end,
-              {description = "show the menubar", group = "launcher"}),
+    -- rofi
+    awful.key({ modkey }, "p", function() awful.spawn("rofi -show run") end,
+              {description = "show rofi", group = "launcher"}),
               
     -- Pessoal
     awful.key({ modkey,           }, "e", function () awful.spawn(file_manager) end,
