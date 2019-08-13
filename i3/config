@@ -156,10 +156,10 @@ mode "resize" {
         bindsym semicolon resize grow width 10 px or 10 ppt
 
         # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
+        bindsym Left resize grow width 10 px or 10 ppt
+        bindsym Down resize shrink height 10 px or 10 ppt
+        bindsym Up resize grow height 10 px or 10 ppt
+        bindsym Right resize shrink width 10 px or 10 ppt
 
         # back to normal: Enter or Escape or $mod+r
         bindsym Return mode "default"
@@ -177,9 +177,6 @@ bindsym XF86AudioMute exec "amixer -q sset Master,0 toggle"
 # Gaps
 gaps inner 10
 
-# Start mpv in pseudo-gui mode
-bindsym ctrl+Shift+m exec mpv --player-operation-mode=pseudo-gui
-
 # File explorer
 bindsym $mod+e exec caja
 bindsym $mod+Ctrl+e exec caja /run/media/kouta/
@@ -192,9 +189,6 @@ bindsym --release Ctrl+Print exec maim -i $(xdotool getactivewindow) $HOME/Image
 # Individual clients confs
 for_window [class=".*"] border pixel 0
 for_window [class="mpv"] floating enable
-for_window [class="firefoxdeveloperedition" instance=".*"] floating enable
-for_window [class="Waterfox Alpha" instance=".*"] floating enable
-for_window [class="firefoxdeveloperedition" instance="Navigator"] floating disable
-for_window [class="Waterfox Alpha" instance="Navigator"] floating disable
+for_window [class="Waterfox Alpha" instance="^(?!Navigator).*"] floating enable
 for_window [class="Caja"] floating enable
 for_window [class="Lxappearance"] floating enable
