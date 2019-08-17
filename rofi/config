@@ -1,32 +1,42 @@
+!                 ___        
+!                /'___\ __    
+!    _ __   ___ /\ \__//\_\   
+!   /\`'__\/ __`\ \ ,__\/\ \  
+!   \ \ \//\ \L\ \ \ \_/\ \ \ 
+!    \ \_\\ \____/\ \_\  \ \_\
+!     \/_/ \/___/  \/_/   \/_/
+!
+
+
 ! "Window width" Set from: Default
-rofi.width:		20
+rofi.width:		      -25
 
 ! "Number of lines" Set from: Default
-rofi.lines:		10
+rofi.lines:		       10
 
 ! "Number of columns" Set from: Default
-rofi.columns:		1
+rofi.columns:	    	1
 
 ! "Font to use" Set from: Default
-rofi.font:		Terminus (TTF) 9
+rofi.font:		       Terminus (TTF) 9
 
 ! "Border width" Set from: Default
-rofi.bw:		0
+rofi.bw:		        0
 
 ! "Location on screen" Set from: Default
-rofi.location:		1
-rofi.yoffset:		28
-rofi.xoffset:		2
+rofi.location:	    	1
+rofi.yoffset:	    	28
+rofi.xoffset:	    	2
 
 ! Enable color
-rofi.color-enabled:	true
+rofi.color-enabled: 	true
 
 ! Window: background, border, separator
 ! State: bg, fg, altbg, hlbg, hlfg
-rofi.color-window:	#DD2E3540, #000000, #04CED4
-rofi.color-normal:	#002E3540, #04CED4, #002E3540, #002E3540, #B3FFFF
-rofi.color-active:	#002E3540, #04CED4, #002E3540, #002E3540, #B3FFFF
-rofi.color-urgent:	#002E3540, #04CED4, #002E3540, #002E3540, #B3FFFF
+rofi.color-window:	    #F22E3540, #000000, #04CED4
+rofi.color-normal:	    #002E3540, #04CED4, #002E3540, #002E3540, #B3FFFF
+rofi.color-active:	    #002E3540, #04CED4, #002E3540, #002E3540, #B3FFFF
+rofi.color-urgent:	    #002E3540, #04CED4, #002E3540, #002E3540, #B3FFFF
 
 rofi.hide-scrollbar:	true
 rofi.separator-style:	solid

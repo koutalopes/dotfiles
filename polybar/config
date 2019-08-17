@@ -13,7 +13,7 @@
 
 ;----------------------------------------------------------------
 [colors]
-bg = #DD2E3540
+bg = #F22E3540
 fg = #04CED4
 bg-alt = #677790
 fg-alt = #5F7879
@@ -35,8 +35,7 @@ tray-position = right
 
 font-0 = "xos4 Terminus:size=9;1"
 font-1 = "IPAMincho:size=9;1"
-font-2 = "siji;1"
-font-3 = "UbuntuMono Nerd Font Mono:pixelsize=18;2"
+font-2 = "Font Awesome 5 Pro:size=10;1"
 
 modules-left = i3 bspwm
 modules-right = alsa wlan battery date
@@ -122,9 +121,9 @@ mapped = true
 format-volume = <label-volume> <bar-volume>
 format-muted = <label-muted> <bar-volume>
 
-label-volume = "墳"
+label-volume = 
 label-volume-font = 4
-label-muted = "婢"
+label-muted = 
 label-muted-font = 4
 
 bar-volume-width = 10
@@ -142,11 +141,11 @@ type = internal/network
 interface = wlp9s0
 interval = 3.0
 
-format-connected = 直
-format-connected-font = 4
-format-disconnected = 睊
-format-disconnected-font = 4
-format-packetloss-font = 4
+format-connected = 
+format-connected-font = 3
+format-disconnected = 
+format-disconnected-font = 3
+format-packetloss-font = 3
 format-packetloss = 
 format-packetloss-foreground = #FF0000
 ;----------------------------------------------------------------

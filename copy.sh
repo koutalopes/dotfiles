@@ -1,12 +1,13 @@
 #!/bin/bash
 
+shopt -s extglob
+
 dot=$1
 
-rm -fr $HOME/Scripts/dotfiles/"$dot"
-
-if [[ "$dot" == "Xresources" ]]; then
-    cp -f $HOME/.Xresources $HOME/Scripts/dotfiles/"$dot"
+if [[ "$dot" == "all" ]]; then
+    rm -r !(README.md|copy.sh)
+    cp -r $XDG_CONFIG_HOME/{dunst,i3,mpv,neofetch,nvim,polybar,ranger,rofi,termite,compton.conf} $HOME/Scripts/dotfiles
 else
-    cp -fr $XDG_CONFIG_HOME/"$dot" $HOME/Scripts/dotfiles
+    cp -r $XDG_CONFIG_HOME/"$dot" $HOME/Scripts/dotfiles
 fi
 

@@ -40,7 +40,8 @@ default_orientation horizontal
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+#bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec termite
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -178,17 +179,16 @@ bindsym XF86AudioMute exec "amixer -q sset Master,0 toggle"
 gaps inner 10
 
 # File explorer
-bindsym $mod+e exec caja
-bindsym $mod+Ctrl+e exec caja /run/media/kouta/
+bindsym $mod+e exec urxvt -e ranger
+bindsym $mod+Ctrl+e exec urxvt -e ranger /run/media/ric/Renge\ Miyauchi
 
 # Print
-bindsym --release Print exec maim $HOME/Imagens/Screenshots/$(date +%s).png | notify-send "Screen Captured"
-bindsym --release Shift+Print exec maim -s $HOME/Imagens/Screenshots/$(date +%s).png | notify-send "Selection Captured"
-bindsym --release Ctrl+Print exec maim -i $(xdotool getactivewindow) $HOME/Imagens/Screenshots/$(date +%s).png | notify-send "Windown Captured"
+bindsym --release Print exec maim $HOME/Scripts/dotfiles/ss/$(date +%s).png | notify-send "Screen Captured"
+bindsym --release Shift+Print exec maim -s $HOME/Scripts/dotfiles/ss/$(date +%s).png | notify-send "Selection Captured"
+bindsym --release Ctrl+Print exec maim -i $(xdotool getactivewindow) $HOME/Scripts/dotfiles/ss/$(date +%s).png | notify-send "Window Captured"
 
 # Individual clients confs
 for_window [class=".*"] border pixel 0
 for_window [class="mpv"] floating enable
-for_window [class="Waterfox Alpha" instance="^(?!Navigator).*"] floating enable
-for_window [class="Caja"] floating enable
 for_window [class="Lxappearance"] floating enable
+for_window [class="qt5ct"] floating enable
