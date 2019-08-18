@@ -9,14 +9,14 @@ local gears = require("gears")
 
 local gfs = require("gears.filesystem")
 local themes_path = gfs.get_configuration_dir() .. "themes/"
+local img_folder = os.getenv("HOME") .. "/Imagens/"
 
 local theme = {}
 
-theme.font          = "Terminus (TTF) 9"
-theme.border_radius = dpi(6)
+theme.font          = "Source Code Pro Light 10"
 
---theme.bg_normal     = "#222222"
---theme.bg_focus      = "#535d6c"
+theme.bg_normal     = "#222222"
+theme.bg_focus      = "#535d6c"
 theme.bg_urgent     = "#ff0000"
 --theme.bg_minimize   = "#444444"
 --theme.bg_systray    = theme.bg_normal
@@ -26,15 +26,11 @@ theme.bg_urgent     = "#ff0000"
 theme.fg_urgent     = "#ffffff"
 --theme.fg_minimize   = "#ffffff"
 
-theme.useless_gap   = dpi(4)
-theme.border_width = dpi(0)
-theme.border_normal = "#000000"
-theme.border_focus  = "#535d6c"
-theme.border_marked = "#91231c"
-
+theme.useless_gap   = dpi(6)
+theme.border_width  = dpi(0)
 theme.wibar_fg = "#04ced4"
 theme.wibar_bg = "#2e3540"
-theme.wibar_opacity = 0.95
+--theme.wibar_opacity = 0.95
 
 theme.taglist_fg_ocuppied = "#04ced4"
 theme.taglist_fg_focus = "#b3ffff"
@@ -44,7 +40,7 @@ theme.menu_submenu_icon = themes_path.."default/submenu.png"
 theme.menu_height = dpi(15)
 theme.menu_width  = dpi(100)
 
-theme.wallpaper = themes_path.."default/background_white.png"
+theme.wallpaper = img_folder .. gears.filesystem.get_random_file_from_dir(img_folder)
 
 -- You can use your own layout icons like this:
 theme.layout_fairh = themes_path.."default/layouts/fairhw.png"
