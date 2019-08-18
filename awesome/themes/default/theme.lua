@@ -5,6 +5,7 @@
 local theme_assets = require("beautiful.theme_assets")
 local xresources = require("beautiful.xresources")
 local dpi = xresources.apply_dpi
+local gears = require("gears")
 
 local gfs = require("gears.filesystem")
 local themes_path = gfs.get_configuration_dir() .. "themes/"
@@ -12,6 +13,7 @@ local themes_path = gfs.get_configuration_dir() .. "themes/"
 local theme = {}
 
 theme.font          = "Terminus (TTF) 9"
+theme.border_radius = dpi(6)
 
 --theme.bg_normal     = "#222222"
 --theme.bg_focus      = "#535d6c"
@@ -25,9 +27,10 @@ theme.fg_urgent     = "#ffffff"
 --theme.fg_minimize   = "#ffffff"
 
 theme.useless_gap   = dpi(4)
---theme.border_normal = "#000000"
---theme.border_focus  = "#535d6c"
---theme.border_marked = "#91231c"
+theme.border_width = dpi(0)
+theme.border_normal = "#000000"
+theme.border_focus  = "#535d6c"
+theme.border_marked = "#91231c"
 
 theme.wibar_fg = "#04ced4"
 theme.wibar_bg = "#2e3540"

@@ -163,8 +163,15 @@ screen.connect_signal("request::desktop_decoration", function(s)
         screen = s,
         size = 27,
     })
+    
+    local bt_cap = "cat /sys/class/power_supply/BAT0/capacity" 
+    battery = awful.widget.watch(bt_cap, 3, function(widget, stdout)
+            cap = " " .. tonumber(stdout) .. "%"
+            widget:set_text(cap)
+        end
+    )
 
-    s.battery = awful.widget.watch('bash -c "acpi -b"', 3)
+    sep = wibox.widget.textbox(' |')
 
     -- Add widgets to the wibox
     s.mywibox:setup {
@@ -178,16 +185,9 @@ screen.connect_signal("request::desktop_decoration", function(s)
             nil,
             {
                 layout = wibox.layout.fixed.horizontal,
-                {
-                    layout = awful.widget.only_on_screen,
-                    screen = "primary",
-                    s.battery,
-                },
-                {
-                    layout = awful.widget.only_on_screen,
-                    screen = "primary",
-                    mytextclock,
-                },
+                battery,
+                sep,
+                mytextclock,
                 {
                     layout = awful.widget.only_on_screen,
                     screen = "primary",
@@ -484,4 +484,9 @@ client.connect_signal("manage", function (c)
         awful.placement.no_offscreen(c)
     end
 end)
+
+if beautiful.border_width > 0 then
+    client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
+    client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
+end
 -- }}}
