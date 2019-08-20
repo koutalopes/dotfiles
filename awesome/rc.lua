@@ -17,7 +17,8 @@ local hotkeys_popup = require("awful.hotkeys_popup")
 require("awful.hotkeys_popup.keys")
 
 -- Load user widgets
-local battery = require("battery")
+local battery = require("scripts.battery")
+local wireless = require("scripts.wireless")
 
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
@@ -35,7 +36,7 @@ end)
 -- Themes define colours, icons, font and wallpapers.
 beautiful.init(gears.filesystem.get_configuration_dir() .. "themes/default/theme.lua")
 
-awful.spawn(gears.filesystem.get_configuration_dir() .. "scripts/screens.sh")
+--awful.spawn(gears.filesystem.get_configuration_dir() .. "scripts/screens.sh")
 
 -- This is used later as the default terminal and editor to run.
 terminal = "termite"
@@ -178,6 +179,8 @@ screen.connect_signal("request::desktop_decoration", function(s)
             nil,
             {
                 layout = wibox.layout.fixed.horizontal,
+                wireless,
+                sep,
                 battery,
                 sep,
                 mytextclock,
@@ -461,7 +464,7 @@ awful.rules.rules = {
       }, properties = { titlebars_enabled = false }
     },
 
-    { rule = { class = "Firefox" },
+    { rule = { class = "firefoxdeveloperedition" },
       except = { instance = "Navigator" },
       properties = {floating = true},
     },

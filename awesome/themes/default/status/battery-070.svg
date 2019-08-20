@@ -1,9 +1,40 @@
-<svg xmlns="http://www.w3.org/2000/svg" height="22" width="22">
-    <defs id="defs1">
-        <style type="text/css" id="current-color-scheme">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   id="svg1297"
+   version="1.1"
+   width="22"
+   height="22">
+  <metadata
+     id="metadata1301">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs1">
+    <style
+       id="current-color-scheme"
+       type="text/css">
             .ColorScheme-Text {
                 color:#eff0f1;
             }
         </style>
-    </defs>
-    <path style="fill:currentColor;fill-opacity:1;stroke:none" class="ColorScheme-Text" d="M3 7v8h11l-2-8zM1 5v12h19v-4h.5c.277 0 .5-.223.5-.5v-3c0-.277-.223-.5-.5-.5H20V5H4zm1 1h17v10H2z" fill-rule="evenodd"/></svg>
+  </defs>
+  <path
+     id="path1295"
+     fill-rule="evenodd"
+     d="M3 7v8h11l-2-8zM1 5v12h19v-4h.5c.277 0 .5-.223.5-.5v-3c0-.277-.223-.5-.5-.5H20V5H4zm1 1h17v10H2z"
+     class="ColorScheme-Text"
+     style="fill:#04ced4;fill-opacity:1;stroke:none" />
+</svg>

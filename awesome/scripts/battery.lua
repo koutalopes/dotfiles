@@ -3,7 +3,7 @@ local wibox = require("wibox")
 local gfs = require("gears.filesystem")
 local naughty = require("naughty")
 
-local icon_path = gfs.get_configuration_dir() .. "themes/default/status/"
+local icon_path = gfs.get_configuration_dir() .. "/themes/default/status/"
 
 local battery_widget = wibox.widget {
     {
@@ -16,7 +16,7 @@ local battery_widget = wibox.widget {
 
 local notification
 local function battery_status()
-    awful.spawn.easy_async([[bash -c 'acpi']],
+    awful.spawn.easy_async([[bash -c 'acpi -b']],
         function(stdout, _, _, _)
             naughty.destroy(notification)
             notification = naughty.notify {
@@ -54,16 +54,16 @@ awful.widget.watch("acpi -b", 3,
             icon = "030"
         elseif (cap < 30 and cap >= 20) then
             icon = "020"
-        elseif (cap < 20 and cap >= 20) then
+        elseif (cap < 20 and cap >= 10) then
             icon = "010"
         elseif (cap < 10) then
             icon = "000"
         end
 
-        if (status == "Charging") then
-            widget.icon:set_image(icon_path .. "battery-" .. icon .. "-charging.svg")
-        else
+        if (status == "Discharging") then
             widget.icon:set_image(icon_path .. "battery-" .. icon .. ".svg")
+        else
+            widget.icon:set_image(icon_path .. "battery-" .. icon .. "-charging.svg")
         end
 
     end,
