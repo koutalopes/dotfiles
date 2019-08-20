@@ -99,7 +99,7 @@ mykeyboardlayout = awful.widget.keyboardlayout()
 
 -- {{{ Wibar
 -- Create a textclock widget
-mytextclock = wibox.widget.textclock()
+mytextclock = wibox.widget.textclock("%H:%M")
 
 -- Create a wibox for each screen and add it
 local taglist_buttons = gears.table.join(
@@ -165,7 +165,7 @@ screen.connect_signal("request::desktop_decoration", function(s)
         screen = s,
     })
 
-    sep = wibox.widget.textbox(' |')
+    sep = wibox.widget.textbox(' | ')
 
     -- Add widgets to the wibox
     s.mywibox:setup {
@@ -486,5 +486,8 @@ client.connect_signal("manage", function (c)
         awful.placement.no_offscreen(c)
     end
 end)
+
+client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
+client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 
 -- }}}

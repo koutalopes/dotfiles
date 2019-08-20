@@ -28,6 +28,8 @@ theme.fg_urgent     = "#ffffff"
 
 theme.useless_gap   = dpi(6)
 theme.border_width  = dpi(0)
+theme.border_focus = "#04ced4"
+theme.border_normal = "#ffffff"
 theme.wibar_fg = "#04ced4"
 theme.wibar_bg = "#2e3540"
 --theme.wibar_opacity = 0.95
