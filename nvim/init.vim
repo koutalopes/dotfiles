@@ -41,11 +41,21 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
 Plug 'jiangmiao/auto-pairs'
 
+" vimtex
+Plug 'lervag/vimtex'
+
 " deoplete completions sources
 Plug 'https://github.com/zchee/deoplete-clang.git'
 Plug 'https://github.com/Shougo/neco-syntax.git'
 Plug 'https://github.com/zchee/deoplete-jedi.git'
 call plug#end()
+
+"------------------------------------------------------------
+let g:tex_flavor='latex'
+let g:vimtex_view_method='zathura'
+let g:vimtex_quickfix_mode=0
+set conceallevel=1
+let g:tex_conceal='abdmg'
 "------------------------------------------------------------
 " set powerline patched fonts on vim-airline
 let g:airline_powerline_fonts = 1
@@ -56,5 +66,6 @@ let g:airline_theme = 'minimalist'
 let g:deoplete#enable_at_startup = 1 "start deoplete
 let g:deoplete#sources#clang#libclang_path = '/usr/lib/libclang.so' "path to libclang.so
 let g:deoplete#sources#clang#clang_header = '/usr/lib64/clang' "path to clang header directory
+let g:vimtex_compiler_progname = 'nvr'
 autocmd CompleteDone * silent! pclose!
 let $NVIM_TUI_ENABLE_TRUE_COLOR = 1
