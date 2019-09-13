@@ -1,0 +1,44 @@
+* {
+    foreground:         rgba ( 201, 201, 194, 100% );
+    background:         rgba ( 110, 102, 109, 70% );
+    black:              rgba ( 171, 171, 165, 100% );
+    red:                rgba ( 209, 171, 165, 100% );
+    green:              rgba ( 171, 209, 165, 100% );
+    yellow:             rgba ( 209, 209, 165, 100% );
+    blue:               rgba ( 171, 171, 203, 100% );
+    magenta:            rgba ( 209, 171, 203, 100% );
+    cyan:               rgba ( 171, 209, 203, 100% );
+    white:              rgba ( 204, 204, 197, 100% );
+    background-color:   @background;
+    foreground-color:   @foreground;
+    border-color:       @foreground;
+    text-color:         @foreground;
+}
+
+#inputbar {
+    enabled:            false;
+}
+
+#window {
+    border:             1;
+    padding:            10;
+}
+
+#element {
+    background-color:   transparent;
+}
+
+#mainbox {
+    background-color:   transparent;
+}
+
+#listview {
+    background-color:   transparent;
+}
+
+#element.selected.normal {
+    background-color:   @foreground;
+    text-color:         @background;
+}
+
+/* vim:ft=css

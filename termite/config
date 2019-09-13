@@ -1,3 +1,14 @@
+#------------------------------------------------------------------------------
+#
+#       _/                                          _/    _/               
+#    _/_/_/_/    _/_/    _/  _/_/  _/_/_/  _/_/        _/_/_/_/    _/_/    
+#     _/      _/_/_/_/  _/_/      _/    _/    _/  _/    _/      _/_/_/_/   
+#    _/      _/        _/        _/    _/    _/  _/    _/      _/          
+#     _/_/    _/_/_/  _/        _/    _/    _/  _/      _/_/    _/_/_/     
+#
+#------------------------------------------------------------------------------
+
+
 [options]
 allow_bold = true
 #audible_bell = false
@@ -42,39 +53,39 @@ browser = xdg-open
 
 [colors]
 foreground = #c9c9c2
-background = rgba(110, 102, 109, 0.95) 
+background = rgba(110, 102, 109, 0.70) 
 ##6e666d
 
 # black
-color0  = #ababa5
+color0  = #bfbfb8
 color8  = #bfbfb8
 
 # red
-color1  = #d1aba5
+color1  = #ccbfb8
 color9  = #ccbfb8
 
 # green
-color2  = #abd1a5
-color10  = #bfccb8
+color2  = #bfccb8
+color10 = #bfccb8
 
 # yellow
-color3  = #d1d1a5
+color3  = #ccccb8
 color11 = #ccccb8
 
 # blue
-color4  = #ababcb
+color4  = #bfbfc5
 color12 = #bfbfc5
 
 # magenta
-color5  = #d1abcb
+color5  = #ccbfc5
 color13 = #ccbfc5
 
 # cyan
-color6  = #abd1cb
+color6  = #bfccc5
 color14 = #bfccc5
 
 # white
-color7  = #ccccc5
+color7  = #d1d1cb
 color15 = #d1d1cb
 
 
